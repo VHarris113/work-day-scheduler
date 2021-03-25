@@ -13,6 +13,10 @@ body {
     padding: 10px;
   }
   
+  th {
+    text-align: center;
+  }
+
   .jumbotron {
     text-align: center;
     background-color: transparent;
@@ -69,4 +73,7 @@ body {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
-  
+
+  .activity {
+    width: 90%;
+  }
