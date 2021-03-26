@@ -1,9 +1,24 @@
-// Timeblock editing
-// Timeblock edits staying if page refreshed
-// Being able to save timeblock edits to page
-// Timeblock changing colors for past, present, and future
+// This is the function for the time at the top of the page
+var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+$("#currentDay").text(time);
+var update = function() {
+    document.getElementById("currentDay")
+    .innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
+}
+setInterval(update, 1000);
 
-console.log("Hello World");
+var timeNow = moment().format("HH");
+// console.log(timeNow);
+
+function currentHour() {
+    var time;
+    var timeNow;
+    $('.time-block').each(function() {
+        if (time === timeNow) {
+            $(this).addClass('.present');
+        }
+    })
+}
 
 // // Variables and DOM Elements
 // // var timeNow = moment().format("HH");
@@ -16,17 +31,8 @@ console.log("Hello World");
 // var present = $('.present');
 // var future = $('future');
 
-// This is the function for the time at the top of the page
-var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-$("#currentDay").text(time);
-var update = function() {
-    document.getElementById("currentDay")
-    .innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
-}
-setInterval(update, 1000);
-
-// Save Button
-var saveBtn = $(".saveBtn");
+// // Save Button
+// var saveBtn = $(".saveBtn");
 
 // saveBtn.addEventListener("click", function(event) {
 //     event.preventDefault();
@@ -44,24 +50,25 @@ var saveBtn = $(".saveBtn");
 
 
 // Will change the schedule blocks' colors depending on time
-function currentHour() {
-    var time;
-    var hour = $('#9AM').val();
-    console.log("this is the hour value" + hour);
-    // var hour = the time the block lands on
-    $(".time-block").each(function() {
-        if (hour < time) {
-            $(this).addClass("past");
-        }
-        else if (hour === time) {
-                $(this).removeClass("past");
-                $(this).addClass("present");
-            }
-            else {
-                $(this).removeClass("past");
-                $(this).removeClass("present");
-                $(this).addClass("future");
-            }
-    });
-};
-currentHour();
+// var i = [];
+// function currentHour() {
+//     var time;
+//     var hour = $('#' + i + 'AM').val();
+//     console.log("this is the hour value" + hour);
+//     // var hour = the time the block lands on
+//     $(".time-block").each(function() {
+//         if (hour < time) {
+//             $(this).addClass("past");
+//         }
+//         else if (hour === time) {
+//                 $(this).removeClass("past");
+//                 $(this).addClass("present");
+//             }
+//             else {
+//                 $(this).removeClass("past");
+//                 $(this).removeClass("present");
+//                 $(this).addClass("future");
+//             }
+//     });
+// };
+// currentHour();
