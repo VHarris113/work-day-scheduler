@@ -12,6 +12,14 @@ var update = function() {
 }
 setInterval(update, 1000);
 
+// Save Button
+saveBtn.on("click", function() {
+    var hour = $(this).attr("hour");
+
+    var activity =$("#timeblock" + i).val();
+
+    localStorage.setItem(hour, activity);
+});
 
 // Variables and DOM Elements
 // var timeNow = moment().format("HH");
@@ -42,14 +50,7 @@ function scheduledItems() {
     saveBtn();
 };
 
-// Save Button
-saveBtn.on("click", function() {
-    var hour = $(this).attr("hour");
 
-    var activity =$("#timeblock" + i).val();
-
-    localStorage.setItem(hour, activity);
-});
 
 
 // $('#timeblock9').attr("time", moment("9:00:00am", "h:mm:ss a").format("HH"));
