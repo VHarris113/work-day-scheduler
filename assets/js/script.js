@@ -18,7 +18,7 @@ var saveBtn = $(".saveBtn");
 saveBtn.on("click", function() {
     var hour = $(this).attr("hour");
 
-    var activity =$("#appt").val();
+    var activity =$(".description").val();
 
     localStorage.setItem(hour, activity);
 });
@@ -34,12 +34,13 @@ saveBtn.on("click", function() {
 // var past = $('.past');
 // var present = $('.present');
 // var future = $('future');
+var hour = $('.hour')
 
-function colorBlocks() {
+// Will change the schedule blocks' colors depending on time
+function currentHour() {
     var timeNow = moment().hours();
-
+    // var hour = the time the block lands on
     $(".time-block").each(function() {
-        var hour = parseInt($(this).attr("id").split("-")[1]);
         if (hour < timeNow) {
             $(this).addClass("past");
         }
@@ -55,11 +56,13 @@ function colorBlocks() {
     });
 };
 
-colorBlocks();
+currentHour();
+
+$(".hour .description").val(localStorage.getItem(".hour"));
 
 // LOCAL STORAGE FOR DAILY SCHEDULE ITEMS
-function scheduledItems() {
-    var appt = localStorage.getItem("appt");
-    userAppt.textContent = appt;
-    saveBtn();
-};
+// function scheduledItems() {
+//     var appt = localStorage.getItem("appt");
+//     userAppt.textContent = appt;
+//     saveBtn();
+// };
