@@ -18,16 +18,9 @@ $(document).ready(function() {
     })
 });
 
-var timeNow = setInterval(function() {
-  var timeOfDay = $(".description");
-  if 
-
-function currentHour() {
-  var timeNow = moment().format();
-
-  $(".time-block").switch(function () {
-    var schTime = parseInt($(this).attr("id").split("-")[1]);
-
+$(function () {
+  var timeNow = new Date();
+  var schTime = timeNow.getHours();
     if (schTime === timeNow) {
       $(this).addClass("present");
       $(this).removeClass("past");
@@ -36,23 +29,20 @@ function currentHour() {
          $(this).addClass("past");
          $(this).removeClass("present");
          $(this).removeClass("future");
-          }   else { 
+          }   else { (schTime < timeNow);
                   $(this).addClass("future");
                   $(this).removeClass("past");
                   $(this).removeClass("present");
-    }
-  });
-  
-  $("#9AM .description").val(localStorage.getItem("9AM"));
-  $("#10AM .description").val(localStorage.getItem("10AM"));
-  $("#11AM .description").val(localStorage.getItem("11AM"));
-  $("#12PM .description").val(localStorage.getItem("12PM"));
-  $("#1PM .description").val(localStorage.getItem("1PM"));
-  $("#2PM .description").val(localStorage.getItem("2PM"));
-  $("#3PM .description").val(localStorage.getItem("3PM"));
-  $("#4PM .description").val(localStorage.getItem("4PM"));
-  $("#5PM .description").val(localStorage.getItem("5PM"));
-  
-  currentHour();
+    };
 
-}
+      $("#9AM .description").val(localStorage.getItem("9AM"));
+      $("#10AM .description").val(localStorage.getItem("10AM"));
+      $("#11AM .description").val(localStorage.getItem("11AM"));
+      $("#12PM .description").val(localStorage.getItem("12PM"));
+      $("#1PM .description").val(localStorage.getItem("1PM"));
+      $("#2PM .description").val(localStorage.getItem("2PM"));
+      $("#3PM .description").val(localStorage.getItem("3PM"));
+      $("#4PM .description").val(localStorage.getItem("4PM"));
+      $("#5PM .description").val(localStorage.getItem("5PM"));
+
+  });
