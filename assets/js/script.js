@@ -3,6 +3,19 @@
 // Being able to save timeblock edits to page
 // Timeblock changing colors for past, present, and future
 
+console.log("Hello World");
+
+// // Variables and DOM Elements
+// // var timeNow = moment().format("HH");
+// // var timeNowInt = parseInt(timeNow);
+// // var saveBtn = $(".saveBtn");
+
+// // More variables and DOM elements
+// var userAppt = $('#time-block');
+// var past = $('.past');
+// var present = $('.present');
+// var future = $('future');
+
 // This is the function for the time at the top of the page
 var time = moment().format('MMMM Do YYYY, h:mm:ss a');
 $("#currentDay").text(time);
@@ -15,36 +28,32 @@ setInterval(update, 1000);
 // Save Button
 var saveBtn = $(".saveBtn");
 
-saveBtn.on("click", function() {
-    var hour = $(this).attr("hour");
+// saveBtn.addEventListener("click", function(event) {
+//     event.preventDefault();
 
-    var activity =$(".description").val();
+//     var hour = $(this).value("hour");
 
-    localStorage.setItem(hour, activity);
-});
+//     var activity =$(".description").val();
 
+//     localStorage.setItem(hour, activity);
+// });
 
-// Variables and DOM Elements
-// var timeNow = moment().format("HH");
-// var timeNowInt = parseInt(timeNow);
-// var saveBtn = $(".saveBtn");
+// $(".hour .description").val(localStorage.getItem(".hour"));
 
-// // More variables and DOM elements
-// var userAppt = $('#time-block');
-// var past = $('.past');
-// var present = $('.present');
-// var future = $('future');
-var hour = $('.hour')
+// Set time with each row
+
 
 // Will change the schedule blocks' colors depending on time
 function currentHour() {
-    var timeNow = moment().hours();
+    var time;
+    var hour = $('#9AM').val();
+    console.log("this is the hour value" + hour);
     // var hour = the time the block lands on
     $(".time-block").each(function() {
-        if (hour < timeNow) {
+        if (hour < time) {
             $(this).addClass("past");
         }
-        else if (hour === timeNow) {
+        else if (hour === time) {
                 $(this).removeClass("past");
                 $(this).addClass("present");
             }
@@ -55,14 +64,4 @@ function currentHour() {
             }
     });
 };
-
 currentHour();
-
-$(".hour .description").val(localStorage.getItem(".hour"));
-
-// LOCAL STORAGE FOR DAILY SCHEDULE ITEMS
-// function scheduledItems() {
-//     var appt = localStorage.getItem("appt");
-//     userAppt.textContent = appt;
-//     saveBtn();
-// };
