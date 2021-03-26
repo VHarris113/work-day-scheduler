@@ -21,22 +21,22 @@ $(document).ready(function() {
 function currentHour() {
   var timeNow = moment().format();
 
-  $(".time-block").each(function () {
-    var schTime = parseInt($(this).attr("id").split("hour")[1]);
+  $(".time-block").switch(function () {
+    var schTime = parseInt($(this).attr("id").split("-")[1]);
 
-    if (schTime > timeNow) {
+    if (schTime === timeNow) {
+      $(this).addClass("present");
+      $(this).removeClass("past");
+      $(this).removeClass("future");
+    } else if (schTime > timeNow) {
          $(this).addClass("past");
          $(this).removeClass("present");
          $(this).removeClass("future");
-    }       else if (schTime === timeNow) {
-                $(this).addClass("present");
-                $(this).removeClass("past");
-                $(this).removeClass("future");
-    }           else { (schTime < timeNow);
-                        $(this).addClass("future");
-                        $(this).removeClass("past");
-                        $(this).removeClass("present");
-    }
+          }   else { 
+                  $(this).addClass("future");
+                  $(this).removeClass("past");
+                  $(this).removeClass("present");
+  }
   });
   
   $("#9AM .description").val(localStorage.getItem("9AM"));
