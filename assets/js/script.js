@@ -15,34 +15,90 @@ $(document).ready(function() {
         var time = $(this).parent().attr("id");
 
         localStorage.setItem(text, time);
+
+        $("#9AM .description").val(localStorage.getItem("9AM"));
+        $("#10AM .description").val(localStorage.getItem("10AM"));
+        $("#11AM .description").val(localStorage.getItem("11AM"));
+        $("#12PM .description").val(localStorage.getItem("12PM"));
+        $("#1PM .description").val(localStorage.getItem("1PM"));
+        $("#2PM .description").val(localStorage.getItem("2PM"));
+        $("#3PM .description").val(localStorage.getItem("3PM"));
+        $("#4PM .description").val(localStorage.getItem("4PM"));
+        $("#5PM .description").val(localStorage.getItem("5PM"));
     })
 });
 
-$(function () {
-  var timeNow = new Date();
-  var schTime = timeNow.getHours();
-    if (schTime === timeNow) {
-      $(this).addClass("present");
-      $(this).removeClass("past");
-      $(this).removeClass("future");
-    } else if (schTime > timeNow) {
-         $(this).addClass("past");
-         $(this).removeClass("present");
-         $(this).removeClass("future");
-          }   else { (schTime < timeNow);
-                  $(this).addClass("future");
-                  $(this).removeClass("past");
-                  $(this).removeClass("present");
-    };
+var now = new Date().getHours();
 
-      $("#9AM .description").val(localStorage.getItem("9AM"));
-      $("#10AM .description").val(localStorage.getItem("10AM"));
-      $("#11AM .description").val(localStorage.getItem("11AM"));
-      $("#12PM .description").val(localStorage.getItem("12PM"));
-      $("#1PM .description").val(localStorage.getItem("1PM"));
-      $("#2PM .description").val(localStorage.getItem("2PM"));
-      $("#3PM .description").val(localStorage.getItem("3PM"));
-      $("#4PM .description").val(localStorage.getItem("4PM"));
-      $("#5PM .description").val(localStorage.getItem("5PM"));
+function colorCode() {
+if (now > 9) {
+  $("#9AM").addClass("past");
+} else if (now >= 9 && now < 10){
+  $("#9AM").addClass("present");
+} else if (now < 9) {
+  $("#9AM").addClass("future");
+};
 
-  });
+if (now > 10) {
+  $("#10AM").addClass("past");
+} else if (now >= 10 && now < 11){
+  $("#10AM").addClass("present");
+} else if (now < 10) {
+  $("#10AM").addClass("future");
+};
+
+if (now > 11) {
+  $("#11AM").addClass("past");
+} else if (now >= 11 && now < 12){
+  $("#11AM").addClass("present");
+} else if (now < 11) {
+  $("#11AM").addClass("future");
+};
+
+if (now > 12) {
+  $("#12PM").addClass("past");
+} else if (now >= 12 && now < 1){
+  $("#12PM").addClass("present");
+} else if (now < 12) {
+  $("#12PM").addClass("future");
+};
+
+if (now > 1) {
+  $("#1PM").addClass("past");
+} else if (now >= 1 && now < 2){
+  $("#1PM").addClass("present");
+} else if (now < 1) {
+  $("#1PM").addClass("future");
+};
+
+if (now > 2) {
+  $("#2PM").addClass("past");
+} else if (now >= 2 && now < 3){
+  $("#2PM").addClass("present");
+} else if (now < 2) {
+  $("#2PM").addClass("future");
+};
+
+if (now > 3) {
+  $("#3PM").addClass("past");
+} else if (now >= 3 && now < 4){
+  $("#3PM").addClass("present");
+} else if (now < 3) {
+  $("#3PM").addClass("future");
+};
+if (now > 4) {
+  $("#4PM").addClass("past");
+} else if (now >= 4 && now < 5){
+  $("#4PM").addClass("present");
+} else if (now < 4) {
+  $("#4PM").addClass("future");
+};
+
+if (now > 5) {
+  $("#5PM").addClass("past");
+} else if (now >= 5 && now < 6){
+  $("#5PM").addClass("present");
+} else if (now < 5) {
+  $("#5PM").addClass("future");
+};
+};
