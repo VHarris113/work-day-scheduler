@@ -36,7 +36,7 @@ function currentHour() {
                   $(this).addClass("future");
                   $(this).removeClass("past");
                   $(this).removeClass("present");
-  }
+    }
   });
   
   $("#9AM .description").val(localStorage.getItem("9AM"));
