@@ -52,5 +52,3 @@ function currentHour() {
   currentHour();
 
 }
-
-
