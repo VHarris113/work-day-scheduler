@@ -8,24 +8,43 @@ var update = function () {
 };
 setInterval(update, 1000);
 
+$(document).ready(function() {
+    $(".saveBtn").on("click", function () {
+
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
+
+        localStorage.setItem(text, time);
+    })
+});
+
 function currentHour() {
   var timeNow = moment().format();
 
-  $(section).each(function () {
+  $(".time-block").each(function () {
     var schTime = parseInt($(this).attr("id").split("hour")[1]);
 
     if (schTime > timeNow) {
-         $(this).addClass(".past");
-         $(this).removeClass(".present");
-         $(this).removeClass(".future");
+         $(this).addClass("past");
+         $(this).removeClass("present");
+         $(this).removeClass("future");
     }       else if (schTime === timeNow) {
-                $(this).addClass(".present");
-                $(this).removeClass(".past");
-                $(this).removeClass(".future");
+                $(this).addClass("present");
+                $(this).removeClass("past");
+                $(this).removeClass("future");
     }           else { (schTime < timeNow);
-                        $(this).addClass(".future");
-                        $(this).removeClass(".past");
-                        $(this).removeClass(".present");
+                        $(this).addClass("future");
+                        $(this).removeClass("past");
+                        $(this).removeClass("present");
     }
   });
+
+
+
+  $("")
+
+
+
 }
+
+
