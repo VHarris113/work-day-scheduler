@@ -13,13 +13,16 @@ var update = function() {
 setInterval(update, 1000);
 
 // Save Button
+var saveBtn = $(".saveBtn");
+
 saveBtn.on("click", function() {
     var hour = $(this).attr("hour");
 
-    var activity =$("#timeblock" + i).val();
+    var activity =$("#appt").val();
 
     localStorage.setItem(hour, activity);
 });
+
 
 // Variables and DOM Elements
 // var timeNow = moment().format("HH");
@@ -36,12 +39,23 @@ function colorBlocks() {
     var timeNow = moment().hours();
 
     $(".time-block").each(function() {
-        var hour = parseInt($(this).attr("id").split("-")[i]);
+        var hour = parseInt($(this).attr("id").split("-")[1]);
         if (hour < timeNow) {
             $(this).addClass("past");
         }
-    })
-}
+        else if (hour === timeNow) {
+                $(this).removeClass("past");
+                $(this).addClass("present");
+            }
+            else {
+                $(this).removeClass("past");
+                $(this).removeClass("present");
+                $(this).addClass("future");
+            }
+    });
+};
+
+colorBlocks();
 
 // LOCAL STORAGE FOR DAILY SCHEDULE ITEMS
 function scheduledItems() {
@@ -49,44 +63,3 @@ function scheduledItems() {
     userAppt.textContent = appt;
     saveBtn();
 };
-
-
-
-
-// $('#timeblock9').attr("time", moment("9:00:00am", "h:mm:ss a").format("HH"));
-// $('#timeblock10').attr("time", moment("10:00:00am", "h:mm:ss a").format("HH"));
-// $('#timeblock11').attr("time", moment("11:00:00am", "h:mm:ss a").format("HH"));
-// $('#timeblock12').attr("time", moment("12:00:00pm", "h:mm:ss a").format("HH"));
-// $('#timeblock1').attr("time", moment("1:00:00pm", "h:mm:ss a").format("HH"));
-// $('#timeblock2').attr("time", moment("2:00:00pm", "h:mm:ss a").format("HH"));
-// $('#timeblock3').attr("time", moment("3:00:00pm", "h:mm:ss a").format("HH"));
-// $('#timeblock4').attr("time", moment("4:00:00pm", "h:mm:ss a").format("HH"));
-// $('#timeblock5').attr("time", moment("5:00:00pm", "h:mm:ss a").format("HH"));
-
-
-// function applyColor(){
-// for (var i = 1; i <= 12; i++) {
-//     var elapsedTime = $("#timeblock" + i).attr("time");
-//     var elapsedTimeInt = parseInt(elapsedTime);
-    
-
-//     if (timeNowInt === elapsedTimeInt) {
-//         $("#timeblock" + i).addClass("past");
-//     }
-
-//     if (timeNowInt === elapsedTimeInt) {
-//         $("#timeblock" + i).addClass("present");
-//     }
-
-//     if (timeNowInt === elapsedTimeInt) {
-//         $("#timeblock" + i).addClass("future");
-//         }
-//     }
-// };
-
-
-// function setActivities() {
-//     for (var i = 1; i <= 12; i++) {
-//         $('#timeblock' + i).val(localStorage.getItem(i));
-//     }
-// };
