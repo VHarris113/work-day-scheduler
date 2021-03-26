@@ -18,6 +18,10 @@ $(document).ready(function() {
     })
 });
 
+var timeNow = setInterval(function() {
+  var timeOfDay = $(".description");
+  if 
+
 function currentHour() {
   var timeNow = moment().format();
 
