@@ -5,14 +5,9 @@ This will also allow the user to save their activity data to the browser, so the
 
 # Deployed Website Pictures
 ![ScreenCap1](https://github.com/VHarris113/work-day-scheduler/blob/main/assets/screencap1.png?raw=true);
-<<<<<<< HEAD
-![ScreenCap2]("");
-![ScreenCap3]("");
 
-[Website](https://vharris113.github.io/work-day-scheduler/)
-=======
-![ScreenCap2]();
+![ScreenCap2](https://github.com/VHarris113/work-day-scheduler/blob/main/assets/screencap2.png);
+
 ![ScreenCap3]();
 
-[Website]("https://vharris113.github.io/work-day-scheduler/")
->>>>>>> c8e353bc4803c0a6c0ee73f9c3d92674992fe211
+##[Website]("https://vharris113.github.io/work-day-scheduler/")
