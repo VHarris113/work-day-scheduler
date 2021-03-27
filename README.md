@@ -10,4 +10,5 @@ This will also allow the user to save their activity data to the browser, so the
 
 ![ScreenCap3]()
 
-# [Website]("https://vharris113.github.io/work-day-scheduler/")
+# Website Link
+![Deployed Site]("https://vharris113.github.io/work-day-scheduler/")
