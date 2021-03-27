@@ -16,7 +16,7 @@ $(document).ready(function() {
 
         localStorage.setItem(text, time);
 
-        $("#9AM .description").val(localStorage.getItem("9AM"));
+        $("#9AM .description").val(localStorage.getItem("description"));
         $("#10AM .description").val(localStorage.getItem("10AM"));
         $("#11AM .description").val(localStorage.getItem("11AM"));
         $("#12PM .description").val(localStorage.getItem("12PM"));
