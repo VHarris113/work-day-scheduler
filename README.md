@@ -8,4 +8,4 @@ This will also allow the user to save their activity data to the browser, so the
 ![ScreenCap2](https://github.com/VHarris113/work-day-scheduler/blob/main/assets/screencap2.png)
 
 # Deployed Website Link
-[Deployed Site]("https://vharris113.github.io/work-day-scheduler/")
+[Deployed Site](https://vharris113.github.io/work-day-scheduler/)
