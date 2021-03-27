@@ -4,8 +4,8 @@ An easy work day scheduler that helps plan different events out. It offers color
 This will also allow the user to save their activity data to the browser, so they can return to the schedule without fail.
 
 # Deployed Website Pictures
-![ScreenCap1]("");
+![ScreenCap1](https://github.com/VHarris113/work-day-scheduler/blob/main/assets/screencap1.png?raw=true);
 ![ScreenCap2]("");
 ![ScreenCap3]("");
 
-[Website]("https://vharris113.github.io/work-day-scheduler/")
+[Website](https://vharris113.github.io/work-day-scheduler/)
